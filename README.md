@@ -8,6 +8,6 @@ pip install pyautogui
 
 pip install numpy
 
-Soon I will compile this into an executable so you won't need to do this eventually. But this will do for now. 
+Soon I will compile this into an executable so you won't need to do this eventually. But this will do for now. Go into t
 
 This program saves the hassle of many Wonder Mails.
