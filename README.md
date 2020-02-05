@@ -8,6 +8,7 @@ pip install pyautogui
 
 pip install numpy
 
-Soon I will compile this into an executable so you won't need to do this eventually. But this will do for now. Go into t
+Soon I will compile this into an executable so you won't need to do this eventually. But this will do for now. Go into the .py file and set your bindings on the line where it says ```autoTyper(string,movementKeys=('w','a','x','d'),selectKey = 'j')```
+And then change your movement keys and your a button (which is selectKey, bad name but I also have x as my down button)
 
 This program saves the hassle of many Wonder Mails.
