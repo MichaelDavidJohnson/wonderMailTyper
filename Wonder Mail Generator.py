@@ -34,7 +34,7 @@ def autoTyper(string,movementKeys=('w','a','x','d'),selectKey = 'j'):
     keyboard = np.array([['A','B','C','D','E','F','G','H','I','J','K','L','M'],
                      ['N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
                      ['ee','1','2','3','4','5','6','7','8','9','0','colon','.'],
-                     ['+','-','comma','fullstop','!','?','le','re','ls','rs','%','#','space']
+                     ['+','-','comma','fullstop','!','?','le','re','ls','rs','#','%','space']
                     ])
     startingPoint = 'N'
     startingIndex = np.where(keyboard == startingPoint)
