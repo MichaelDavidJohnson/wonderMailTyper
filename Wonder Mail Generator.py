@@ -30,37 +30,61 @@ def move(difference,movementKeys,selectKey):
     pyautogui.keyUp(selectKey)
     return 0
 
-def autoTyper(string,movementKeys=('w','a','x','d'),selectKey = 'j'):
+def autoTyper(lst,movementKeys=('w','a','x','d'),selectKey = 'j'):
     keyboard = np.array([['A','B','C','D','E','F','G','H','I','J','K','L','M'],
                      ['N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
                      ['ee','1','2','3','4','5','6','7','8','9','0','colon','.'],
                      ['+','-','comma','fullstop','!','?','le','re','ls','rs','#','%','space']
                     ])
-    startingPoint = 'N'
-    startingIndex = np.where(keyboard == startingPoint)
-    iterator = string + '~'
-    time.sleep(2)
-    for i in iterator:
-        if i == '~':
-            pyautogui.keyDown(selectKey)
-            pyautogui.keyUp(selectKey)
-            break
-        nextPoint = i 
-        nextIndex = np.where(keyboard == nextPoint)
-        move([startingIndex[1][0] - nextIndex[1][0],
-              startingIndex[0][0] - nextIndex[0][0]],movementKeys,selectKey)
-        startingPoint = i
+    for code in lst:
+        startingPoint = 'N'
         startingIndex = np.where(keyboard == startingPoint)
+        iterator = code + '~'
+        for i in iterator:
+            if i == '~':
+                if len(lst)==1:
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    break
+                else:
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(5)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    time.sleep(1)
+                    pyautogui.keyDown(selectKey)
+                    pyautogui.keyUp(selectKey)
+                    break
+            nextPoint = i 
+            nextIndex = np.where(keyboard == nextPoint)
+            move([startingIndex[1][0] - nextIndex[1][0],
+              startingIndex[0][0] - nextIndex[0][0]],movementKeys,selectKey)
+            startingPoint = i
+            startingIndex = np.where(keyboard == startingPoint)
     return 0
-        
 def main():
     string = input("Please input the Wonder Mail: ")
+    lizt = string.split(',')
     print("Starting in 2 seconds.")
     time.sleep(1)
     print("Starting in 1 second.")
     time.sleep(1)
     print("Starting Now")
-    autoTyper(string,movementKeys=('w','a','x','d'),selectKey = 'j')
+    autoTyper(lizt,movementKeys=('w','a','x','d'),selectKey = 'j')
     print("Finished")
     input("Press Enter to escape")
     return 0 
